@@ -1,0 +1,6 @@
+AppBundle\Entity\Course:
+  properties:
+    nazwa:
+      - Length:
+          min: 5
+          max: 255

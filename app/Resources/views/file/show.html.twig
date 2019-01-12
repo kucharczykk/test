@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="column is-6">
+    <h2 class="title">Plik</h2>
+
+    <table class="table is-hoverable is-striped">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td>{{ file.id }}</td>
+            </tr>
+            <tr>
+                <th>Nazwa</th>
+                <td>{{ file.nazwa }}</td>
+            </tr>
+            <tr>
+                <th>Ścieżka</th>
+                <td>{{ file.sciezka }}</td>
+            </tr>
+            <tr>
+                <th>Nr kursu</th>
+                <td>{{ file.nrKursu }}</td>
+            </tr>
+            <tr></tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('file_edit', { 'id': file.id }) }}" class="primary-button">Edytuj</a>
+
+    {{ form_start(delete_form) }}
+        <input type="submit" value="Usuń" class="primary-button">
+    {{ form_end(delete_form) }}
+
+    <a href="{{ path('file_index') }}"><i class="fa fa-reply fa-2x" title="Wróć do listy plików"></i></a>
+
+</div>
+{% endblock %}

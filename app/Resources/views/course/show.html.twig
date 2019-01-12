@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="column is-6">
+    <h2 class="title">Kurs</h2>
+
+    <table class="table is-hoverable is-striped">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ course.id }}</td>
+            </tr>
+            <tr>
+                <th>Nazwa</th>
+                <td>{{ course.nazwa }}</td>
+            </tr>
+            <tr></tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('course_edit', { 'id': course.id }) }}" class="primary-button">Edytuj</a>
+
+    {{ form_start(delete_form) }}
+        <input type="submit" value="Usuń" class="primary-button">
+    {{ form_end(delete_form) }}
+
+    <a href="{{ path('course_index') }}"><i class="fa fa-reply fa-2x" title="Wróć do listy kursów"></i></a>
+
+</div>
+{% endblock %}

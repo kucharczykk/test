@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="column is-6">
+    <h2 class="title">Użytkownik</h2>
+
+    <table class="table is-hoverable is-striped">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Login</th>
+                <td>{{ user.login }}</td>
+            </tr>
+            <tr>
+                <th>Typ konta</th>
+                <td>{{ user.typeAccount }}</td>
+            </tr>
+            <tr>
+                <th>Status aktywności</th>
+                <td>{{ user.active }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('user_index') }}" class="primary-button">Wróć do listy użytkowników</a>
+        </li>
+        <li>
+            <a href="{{ path('user_edit', { 'id': user.id }) }}" class="primary-button">Edytuj</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Usuń" class="primary-button">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+</div>
+{% endblock %}

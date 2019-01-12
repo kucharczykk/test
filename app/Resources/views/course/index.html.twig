@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="column is-12">
+    <h2 class="title">Lista kursów</h2>
+
+    <table class="table is-hoverable is-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nazwa</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for course in courses %}
+            <tr>
+                <td><a href="{{ path('course_show', { 'id': course.id }) }}">{{ course.id }}</a></td>
+                <td>{{ course.nazwa }}</td>
+                <td>
+                    <a href="{{ path('course_show', { 'id': course.id }) }}" class="primary-button inline-block">Pokaż</a>
+                    <a href="{{ path('course_edit', { 'id': course.id }) }}" class="primary-button inline-block">Edytuj</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('course_new') }}" class="primary-button">Utwórz nowy kurs</a>
+
+</div>
+{% endblock %}

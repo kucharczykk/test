@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Logowanie - SUW{% endblock %}
+
+{% block header %}
+    <a href="" id="logButton" class="primary-button">Logi</a>
+    <a href="" id="settingsButton"><i class="fa fa-cog fa-3x" title="Ustawienia"></i></a>
+    <a href="{{ path('_welcome') }}" id="logoutButton" class="primary-button">Wyloguj</a>
+{% endblock %}
+
+{% block leftContent %}
+    <div class="column is-6">
+        <h2 class="title">Kursy</h2>
+        <ul class="list-items">
+
+        </ul>
+        <form action="" method="post" class="primary-form">
+            <label for="nameCourse">Utwórz kurs</label>
+            <input type="text" name="nameCourse" placeholder="Podaj nazwę [4-100]" class="input is-large">
+            <input type="submit" name="insertCourse" value="Utwórz" class="primary-button">
+        </form>
+        <form action="" method="post" class="primary-form">
+            <label for="idCourse">Usuń kurs</label>
+            <input type="text" name="idCourse" placeholder="Podaj nr ID" class="input is-large">
+            <input type="submit" name="deleteCourse" value="Usuń" class="primary-button">
+        </form>
+    </div>
+{% endblock %}
+
+{% block rightContent %}
+    <div class="column is-6">
+        <h2 class="title">Wykłady</h2>
+        <ul class="list-items">
+
+        </ul>
+        <div>
+            <form enctype="multipart/form-data" accept-charset="UTF-8" action="sendwyklad.php" method="POST" class="primary-form">
+                <label for="nrkursu">Dodaj wykład:</label>
+                <input type="hidden" name="MAX_FILE_SIZE" value="500000" />
+                <input type="text" name="nrkursu" placeholder="Numer Kursu" class="input is-large">
+                <input name="plik" type="file" />
+                <input type="submit" value="Wyślij wyklad" class="primary-button"/>
+            </form>
+        </div>
+        <div>
+            <form method="post" action="delete.php" class="primary-form">
+                <label for="filename1">Usuń wykład:</label>
+                <input type="text" name="filename1" placeholder="Podaj nazwe pliku" class="input is-large"> <br>
+                <input type="submit" value="Usuń" class="primary-button">
+            </form>
+        </div>
+    </div>
+{% endblock %}

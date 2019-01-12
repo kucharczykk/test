@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="column is-12">
+    <h2 class="title">Lista plików</h2>
+
+    <table class="table is-hoverable is-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nazwa</th>
+                <th>Ścieżka</th>
+                <th>Nr kursu</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for file in files %}
+            <tr>
+                <td><a href="{{ path('file_show', { 'id': file.id }) }}">{{ file.id }}</a></td>
+                <td>{{ file.nazwa }}</td>
+                <td>{{ file.sciezka }}</td>
+                <td>{{ file.nrKursu }}</td>
+                <td>
+                    <a href="{{ path('file_show', { 'id': file.id }) }}" class="primary-button">Pokaż</a>
+                    <a href="{{ path('file_edit', { 'id': file.id }) }}" class="primary-button">Edytuj</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('file_new') }}" class="primary-button">Utwórz nowy plik</a>
+</div>
+{% endblock %}

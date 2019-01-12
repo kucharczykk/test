@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Logowanie - SUW{% endblock %}
+
+{% block header %}
+    <a href="{{ path('_logs') }}" id="logButton" class="primary-button">Logi</a>
+    <a href="" id="settingsButton"><i class="fa fa-cog fa-3x" title="Ustawienia"></i></a>
+    <a href="{{ path('_welcome') }}" id="logoutButton" class="primary-button">Wyloguj</a>
+{% endblock %}
+
+{% block leftContent %}
+    <div class="column">
+        <h2 class="title">Zarządzanie kontami użytkowników</h2>
+
+        <table class="table is-hoverable is-striped">
+            <thead>
+            <tr>
+                <th>Login</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tr>
+                <td>Nick</td>
+                <td>Aktywny</td>
+            </tr>
+
+        </table>
+    </div>
+{% endblock %}
+
+{% block rightContent %}
+    <div class="column">
+        <h2 class="title">Przypisywanie użytkowników do plików</h2>
+        <table class="table is-hoverable is-striped">
+            <thead>
+            <tr>
+                <th>ID pliku</th>
+                <th>Nazwa pliku</th>
+            </tr>
+            </thead>
+            <tr>
+                <td>1</td>
+                <td>plik.pdf</td>
+            </tr>
+
+        </table>
+
+
+        <table class="table is-hoverable is-striped">
+            <thead>
+            <tr>
+                <th>ID użytkownika</th>
+                <th>Numer indeksu użytkownika</th>
+            </tr>
+            </thead>
+            <tr>
+                <td>1</td>
+                <td>39536</td>
+            </tr>
+
+        </table>
+
+        <h2 class="title">Daj uprawnienia do przeglądania plików</h2>
+        <form action="forms/dostep.php#="dostep">Daj uprawnienia do przeglądania plików</label>
+            <input type="text" name="plik" placeholder="Podaj ID pliku" class="input is-large">
+            <input type="text" name="user" placeholder="Podaj ID użytkownika" class="input is-large">
+            <input type="submit" value="Daj uprawnienia" name="dostepButton" class="primary-button">
+        </form>
+        </div>
+    </div>
+{% endblock %}

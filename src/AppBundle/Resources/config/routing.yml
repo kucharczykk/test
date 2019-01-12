@@ -1,0 +1,12 @@
+app_course:
+    resource: "@AppBundle/Resources/config/routing/course.yml"
+    prefix:   /course
+
+app_user:
+    resource: "@AppBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
+app_file:
+    resource: "@AppBundle/Resources/config/routing/file.yml"
+    prefix:   /file
+

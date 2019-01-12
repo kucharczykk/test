@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="column is-6">
+    <h2 class="title">Utworzenie pliku do kursu</h2>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Utwórz" class="primary-button" />
+    {{ form_end(form) }}
+
+    <a href="{{ path('file_index') }}"><i class="fa fa-reply fa-2x" title="Wróć do listy plików"></i></a>
+
+</div>
+{% endblock %}

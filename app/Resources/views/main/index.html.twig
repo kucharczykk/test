@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SUW{% endblock %}
+
+{% block header %}
+    <a href="{{ path('_register') }}" id="registerButton" class="primary-button">Zarejestruj</a>
+    <a href="{{ path('_login') }}" id="loginButton" class="primary-button">Zaloguj</a>
+{% endblock %}
+
+{% block leftContent %}
+    <div class="column is-6">
+        <h2 class="title">Opis systemu</h2>
+        <p>SUW - System Udostępniania Wykładów</p>
+        <p>System służy do udostępniania wykładów Studentom. Wszystkie pliki są zabezpieczone przed kopiowaniem i drukowaniem.</p>
+    </div>
+{% endblock %}
+
+{% block rightContent %}
+    <div class="column is-6">
+        <h2 class="title">Statystyki</h2>
+        <h3 class="subtitle"><i class="fa fa-users fa-fw"></i>Liczba użytkowników</h3>
+
+        {#{{ user.login }}#}
+        {{ dump(app.user) }}
+
+        <ul class="list-items">
+            <li class="items">Razem<br>{{ count }}</li>
+        </ul>
+        <h3 class="subtitle"><i class="fa fa-download fa-fw"></i>Pobrania</h3>
+        <ul class="list-items">
+            <li class="items">Dzień<br></li>
+            <li class="items">Tydzień<br></li>
+            <li class="items">Miesiąc<br></li>
+            <li class="items">Semestr<br></li>
+        </ul>
+    </div>
+{% endblock %}

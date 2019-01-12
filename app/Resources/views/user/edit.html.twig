@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="column is-6">
+    <h2 class="title">Edycja użytkownika</h2>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Edytuj" class="primary-button"/>
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('user_index') }}" class="primary-button">Wróć do listy użytkowników</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Usuń" class="primary-button">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+</div>
+{% endblock %}

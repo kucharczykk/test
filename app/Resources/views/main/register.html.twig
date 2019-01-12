@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rejestracja - SUW{% endblock %}
+
+{% block header %}
+    <a href="{{ path('_login') }}" id="loginButton" class="primary-button">Zaloguj</a>
+{% endblock %}
+
+{% block leftContent %}
+    <div class="column is-6">
+        <h2 class="title">Rejestracja</h2>
+        <form action="register.php" method="post" class="primary-form">
+            <label for="nrIndex">Nr Indeksu: </label>
+            <input type="text" name="nrIndex" class="input is-large">
+            <label for="userPassword">Hasło: </label>
+            <input type="password" name="userPassword" class="input is-large">
+            <input type="submit" value="Zarejestruj" name="register" class="primary-button">
+        </form>
+    </div>
+{% endblock %}

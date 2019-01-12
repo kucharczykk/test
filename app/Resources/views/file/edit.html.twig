@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="column is-6">
+    <h2 class="title">Edycja pliku</h2>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Edytuj" class="primary-button" />
+    {{ form_end(edit_form) }}
+
+    {{ form_start(delete_form) }}
+        <input type="submit" value="Usuń" class="primary-button">
+    {{ form_end(delete_form) }}
+
+    <a href="{{ path('file_index') }}"><i class="fa fa-reply fa-2x" title="Wróć do listy plików"></i></a>
+</div>
+{% endblock %}
